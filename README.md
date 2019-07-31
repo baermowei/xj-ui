@@ -1,29 +1,27 @@
 # xj-ui
 
-## Project setup
+本项目基于vue-cli3搭建 前端UI项目
+
+使用默认配置
+
+## 安装
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 测试
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 打包（发布git的）
 ```
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
+
 
 ### Lints and fixes files
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
