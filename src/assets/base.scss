@@ -62,7 +62,7 @@ a {
   @include clearfix
 }
 .ell{
-  @include ell()
+  @include ellipsis()
 }
 .hide-text{
   @include hide-text
