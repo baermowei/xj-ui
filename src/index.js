@@ -13,7 +13,7 @@ const components = {
 //     }
 // }
 Object.keys(components).forEach(name => {
-    Vue.component(name, components[name])
+    Vue.component('Xj'+name, components[name])
 })
 
 // /**

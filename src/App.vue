@@ -13,6 +13,12 @@ export default {
   name: 'app',
   components: {
     // HelloWorld
+  },
+  created() {
+    this.$Message.info({
+      message: '这是一条提示信息，10s 后自动关闭',
+      duration: 1000000
+    })
   }
 }
 </script>
