@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <button @click="$Message.info({
-      message: '这是一条提示信息，10s 后自动关闭',
-      duration: 3000
-    })">sdf</button>
+    <xj-modal v-model="modal1" title="这里是标题">
+      <p>这里是模态框的文本内容!</p>
+      <p>这里是模态框的文本内容!</p>
+    </xj-modal>
     <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <!--<hello-world msg="Welcome to Yoursdsfsf.js App"></hello-world>-->
     <xj-menu mode="horizontal" active-name="1">
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+  import XjModal from './components/modal'
 import XjMenu from './components/menu'
 import XjMenuItem from './components/menu/src/menu-item'
 import XjSubmenu from './components/menu/src/submenu'
@@ -35,7 +36,13 @@ export default {
     // HelloWorld
     XjMenu,
     XjMenuItem,
-    XjSubmenu
+    XjSubmenu,
+    XjModal
+  },
+  data(){
+    return{
+      modal1:true
+    }
   },
   created() {
     this.$Message.error({
