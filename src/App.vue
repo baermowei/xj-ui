@@ -5,6 +5,7 @@
       <p>这里是模态框的文本内容!</p>
       <p>这里是模态框的文本内容!</p>
     </xj-modal>
+      <xj-pagination :total="60"></xj-pagination>
     <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <!--<hello-world msg="Welcome to Yoursdsfsf.js App"></hello-world>-->
     <xj-menu mode="horizontal" active-name="1">
@@ -27,6 +28,7 @@
 
 <script>
   import XjModal from './components/modal'
+  import XjPagination from './components/pagination'
 import XjMenu from './components/menu'
 import XjMenuItem from './components/menu/src/menu-item'
 import XjSubmenu from './components/menu/src/submenu'
@@ -37,11 +39,12 @@ export default {
     XjMenu,
     XjMenuItem,
     XjSubmenu,
-    XjModal
+    XjModal,
+      XjPagination
   },
   data(){
     return{
-      modal1:true
+      modal1:false
     }
   },
   created() {
