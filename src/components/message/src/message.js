@@ -73,13 +73,13 @@ Message.close = (id, customCloseFunc) => {
 
     if (len > 1) {
         for (let i = index; i < len - 1; i++) {
-            instances[i].dom.style.top = `${parseInt(instances[i].dom.style.top) - removedHeight - 8}px`
+            instances[i].dom.style.top = `${parseInt(instances[i].dom.style.top) - removedHeight - 20}px`
         }
     }
 }
 
 Message.closeAll = () => {
-    instances.forEach((elem) => {
+    instances.forEach((elem, idx) => {
         elem.close()
     })
 }
@@ -92,6 +92,7 @@ messageType.forEach(type => {
             }
         }
         options.type = type
+        options.icon = options.icon
         return Message(options)
     }
 })

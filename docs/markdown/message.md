@@ -6,6 +6,7 @@
 居中显示在页面顶部，用于展示全局消息，例如操作的反馈信息
 
 - 提供消息、成功、错误、警告等反馈区分，但是不提供对应的样式（需要自定义）
+- 类型前面默认都有一个icon 这样也要自己提供 格式如 `icon-info` 这样
 - 在顶部居中显示，并自动消失，是一种不打断用户操作的轻量级提示
 
 我们在 `Vue.prototype` 中添加了全局对象 `$Message`，我们可以直接通过 `this.$Message` 操作实例
@@ -103,6 +104,7 @@
 | message | 提示的内容 | String | - | - |
 | duration | 自动关闭的延时，默认为 `3000` 毫秒 | Number | - | 3000 |
 | onClose | 关闭提示框时的回调函数 | Function | - | - |
+| vnode   | 自定义内容      |html       
 
 <script>
   export default {

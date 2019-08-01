@@ -8,10 +8,16 @@
             <div
                     class="xj-message"
                     :class="{
-          [`at-message--${type}`]: type}"
+          [`at-message--${type}`]: type
+        }"
                     v-show="visible">
-                    <i class="icon xj-message__icon" :class="iconClass"></i>
-                    <span class="xj-message__content">{{ message }}</span>
+
+                    <div v-if="!vnode">
+                        <i class="icon at-message__icon"  v-if="type" :class="iconClass"></i>
+                        <span class="xj-message__content">{{ message }}</span>
+                    </div>
+                    <div v-else :class="'xj-content-vnode-'+type" v-html="vnode"></div>
+
 
             </div>
         </transition>
@@ -30,7 +36,21 @@
                 timer: null,
                 closed: false,
                 onClose: null,
-                top: null
+                top: null,
+                vnode:false
+            }
+        },
+        computed: {
+            iconClass () {
+                const classArr = {
+                    'success': 'icon-success',
+                    'error': 'icon-error',
+                    'warning': 'icon-warning',
+                    'info': 'icon-info',
+                    'loading': 'icon-loading'
+                }
+
+                return this.icon || classArr[this.type]
             }
         },
         watch: {
@@ -86,3 +106,4 @@
         }
     }
 </style>
+
