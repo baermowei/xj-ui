@@ -1,0 +1,99 @@
+/*/
+此项目不讲究样式
+只要能保证功能完整性
+
+不过多干涉全局样式
+那些是写到真是项目里面的
+
+因为项目要兼容ie9
+所以布局上会有所考虑
+
+ */
+
+
+@import "mixins";
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &:before, &:after {
+    box-sizing: border-box;
+  }
+}
+
+
+/*
+以下是简单样式重置
+ */
+body{
+  -webkit-font-smoothing: antialiased;
+  //font-family: Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+  margin: 0;
+  padding: 0;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  transition: color .3s ease;
+}
+
+/*
+以下为全局的通用样式
+ */
+
+.clearfix{
+  @include clearfix
+}
+.ell{
+  @include ell()
+}
+.hide-text{
+  @include hide-text
+}
+
+.por{
+  position: relative;
+}
+.poa{
+  position: absolute;
+}
+
+.pof{
+  position: fixed;
+}
+
+.z1{
+  z-index: 1;
+}
+.z0{
+  z-index: 0;
+}
+.z3{
+  z-index: 3;
+}
+.l{
+  float: left;
+}
+.r{
+  float: right;
+}
+.ovh{
+  overflow: hidden;
+}

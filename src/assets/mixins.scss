@@ -1,0 +1,30 @@
+
+/*
+一些常用的mixins
+ */
+@mixin ell(
+  $width: 100%,
+  $display: inline-block
+) {
+  display: $display;
+  max-width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+
+@mixin hide-text {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
