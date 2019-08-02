@@ -2,6 +2,9 @@
  * 常用方法
  */
 
+import { isString, isObject } from './types';
+import Vue from 'vue'
+
 const SPECIAL_CHARS_REGEXP = /([:\-_]+(.))/g
 const MOZ_HACK_REGEXP = /^moz([A-Z])/
 
@@ -230,3 +233,19 @@ export const autoprefixer = function(style) {
   });
   return style;
 };
+
+export const isFirefox = function() {
+  return !Vue.prototype.$isServer && !!window.navigator.userAgent.match(/firefox/i);
+};
+
+export function rafThrottle(fn) {
+  let locked = false;
+  return function(...args) {
+    if (locked) return;
+    locked = true;
+    window.requestAnimationFrame(_ => {
+      fn.apply(this, args);
+      locked = false;
+    });
+  };
+}
