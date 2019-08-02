@@ -1,4 +1,4 @@
-import Image from './src/main';
+import Image from './src/image';
 
 /* istanbul ignore next */
 Image.install = function(Vue) {
