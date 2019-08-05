@@ -38,7 +38,7 @@
   import PopoverMixin from '../../../mixins/popover'
 
   export default {
-    name: 'Submenu',
+    name: 'SubMenu',
     components: {
       CollapseTransition
     },

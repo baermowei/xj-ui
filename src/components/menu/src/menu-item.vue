@@ -19,7 +19,7 @@
     import { findComponentsUpward } from '../../../utils/util'
 
     export default {
-        name: 'XjMenuItem',
+        name: 'MenuItem',
         mixins: [Emitter],
         props: {
             name: {

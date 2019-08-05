@@ -4,7 +4,7 @@
             <div class="xj-image__placeholder"></div>
         </slot>
         <slot v-else-if="error" name="error">
-            <div class="xj-image__error">{{ t('el.image.error') }}</div>
+            <div class="xj-image__error">加载失败</div>
         </slot>
         <img
                 v-else
@@ -36,7 +36,7 @@
     };
 
     export default {
-        name: 'ElImage',
+        name: 'Image',
 
         inheritAttrs: false,
 
@@ -219,7 +219,7 @@
 
 
 
-<style>
+<style lang="scss">
 
 
     .xj-image__error,.xj-image__placeholder {
@@ -245,24 +245,12 @@
         position: relative;
         top: 50%;
         left: 50%;
-        -webkit-transform: translate(-50%,-50%);
         transform: translate(-50%,-50%);
         display: block
     }
 
     .xj-image__error {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        font-size: 14px;
-        color: #c0c4cc;
-        vertical-align: middle
+
     }
 
     .xj-image__preview {
@@ -280,32 +268,16 @@
     .xj-image-viewer__btn {
         position: absolute;
         z-index: 1;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        border-radius: 50%;
-        opacity: .8;
         cursor: pointer;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none
+
     }
 
     .xj-image-viewer__close {
         top: 40px;
         right: 40px;
-        width: 40px;
-        height: 40px;
-        font-size: 40px
+        .xjicon{
+            font-size: 26px;
+        }
     }
 
     .xj-image-viewer__canvas {
@@ -324,13 +296,13 @@
 
     .xj-image-viewer__actions {
         left: 50%;
-        bottom: 30px;
+        bottom: 50px;
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
         width: 282px;
         height: 44px;
         padding: 0 23px;
-        background-color: #606266;
+        background-color: rgba(0, 0, 0, 0.6);
         border-color: #fff;
         border-radius: 22px
     }
@@ -340,7 +312,6 @@
         height: 100%;
         text-align: justify;
         cursor: default;
-        font-size: 23px;
         color: #fff;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -349,30 +320,48 @@
         -ms-flex-align: center;
         align-items: center;
         -ms-flex-pack: distribute;
-        justify-content: space-around
+        justify-content: space-around;
+        .xjicon{
+            cursor: pointer;
+            opacity: 0.6;
+            &:hover{
+                opacity: 1;
+            }
+        }
     }
 
-    .xj-image-viewer__next,.xj-image-viewer__prev {
+    .xj-image-viewer__prev,.xj-image-viewer__next{
         top: 50%;
-        width: 44px;
-        height: 44px;
-        font-size: 24px;
+        width:34px;
+        height:121px;
+        background:rgba(0,0,0,0.6);
+        line-height: 121px;
+        text-align: center;
+        margin-top: -62px;
         color: #fff;
-        background-color: #606266;
-        border-color: #fff
+        &:hover{
+            opacity: 0.9;
+            .xjicon{
+                color: #D1AA76;
+            }
+        }
+        .xjicon{
+            font-size: 22px;
+        }
     }
+
+    .xj-image-viewer__next{
+        right: 0;
+    }
+
 
     .xj-image-viewer__prev {
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        left: 40px
+        left: 0;
+        border-radius:0px 16px 16px 0px;
     }
 
     .xj-image-viewer__next {
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        right: 40px;
-        text-indent: 2px
+        border-radius:16px 0px 0px 16px;
     }
 
     .xj-image-viewer__mask {
@@ -386,24 +375,20 @@
     }
 
     .viewer-fade-enter-active {
-        -webkit-animation: viewer-fade-in .3s;
         animation: viewer-fade-in .3s
     }
 
     .viewer-fade-leave-active {
-        -webkit-animation: viewer-fade-out .3s;
         animation: viewer-fade-out .3s
     }
 
     @-webkit-keyframes viewer-fade-in {
         0% {
-            -webkit-transform: translate3d(0,-20px,0);
             transform: translate3d(0,-20px,0);
             opacity: 0
         }
 
         100% {
-            -webkit-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
             opacity: 1
         }
@@ -411,13 +396,11 @@
 
     @keyframes viewer-fade-in {
         0% {
-            -webkit-transform: translate3d(0,-20px,0);
             transform: translate3d(0,-20px,0);
             opacity: 0
         }
 
         100% {
-            -webkit-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
             opacity: 1
         }
@@ -425,13 +408,11 @@
 
     @-webkit-keyframes viewer-fade-out {
         0% {
-            -webkit-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
             opacity: 1
         }
 
         100% {
-            -webkit-transform: translate3d(0,-20px,0);
             transform: translate3d(0,-20px,0);
             opacity: 0
         }
@@ -439,13 +420,11 @@
 
     @keyframes viewer-fade-out {
         0% {
-            -webkit-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
             opacity: 1
         }
 
         100% {
-            -webkit-transform: translate3d(0,-20px,0);
             transform: translate3d(0,-20px,0);
             opacity: 0
         }

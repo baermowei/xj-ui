@@ -4,7 +4,7 @@
             <div class="xj-image-viewer__mask"></div>
             <!-- CLOSE -->
             <span class="xj-image-viewer__btn xj-image-viewer__close" @click="hide">
-        <i class="xj-icon-circle-close"></i>
+        <i class="xjicon iconshanchu"></i>
       </span>
             <!-- ARROW -->
             <template v-if="!isSingle">
@@ -12,40 +12,47 @@
                 class="xj-image-viewer__btn xj-image-viewer__prev"
                 :class="{ 'is-disabled': !infinite && isFirst }"
                 @click="prev">
-          <i class="xj-icon-arrow-left"/>
+          <i class="xjicon iconxiangzuo1"/>
         </span>
                 <span
                         class="xj-image-viewer__btn xj-image-viewer__next"
                         :class="{ 'is-disabled': !infinite && isLast }"
                         @click="next">
-          <i class="xj-icon-arrow-right"/>
+          <i class="xjicon iconxiangyou1"/>
         </span>
             </template>
             <!-- ACTIONS -->
             <div class="xj-image-viewer__btn xj-image-viewer__actions">
                 <div class="xj-image-viewer__actions__inner">
-                    <i class="xj-icon-zoom-out" @click="handleActions('zoomOut')"></i>
-                    <i class="xj-icon-zoom-in" @click="handleActions('zoomIn')"></i>
+                    <i class="xjicon iconsuoxiao" @click="handleActions('zoomOut')"></i>
+                    <i class="xjicon iconfangda1" @click="handleActions('zoomIn')"></i>
                     <i class="xj-image-viewer__actions__divider"></i>
-                    <i :class="mode.icon" @click="toggleMode"></i>
+                    <i class="xjicon iconziyuan" :class="mode.icon" @click="toggleMode"></i>
                     <i class="xj-image-viewer__actions__divider"></i>
-                    <i class="xj-icon-refresh-left" @click="handleActions('anticlocelise')"></i>
-                    <i class="xj-icon-refresh-right" @click="handleActions('clocelise')"></i>
+                    <i class="xjicon iconxiangzuoxuanzhuan" @click="handleActions('anticlocelise')"></i>
+                    <i class="xjicon iconxiangyouxuanzhuan" @click="handleActions('clocelise')"></i>
                 </div>
             </div>
             <!-- CANVAS -->
             <div class="xj-image-viewer__canvas">
-                <img
-                        v-for="(url, i) in urlList"
-                        v-if="i === index"
-                        ref="img"
-                        class="xj-image-viewer__img"
-                        :key="url"
-                        :src="currentImg"
-                        :style="imgStyle"
-                        @load="handleImgLoad"
-                        @error="handleImgError"
-                        @mousedown="handleMouseDown">
+                <div v-for="(url, i) in urlList">
+                    <img
+
+                            v-if="i === index"
+                            ref="img"
+                            class="xj-image-viewer__img"
+                            :key="url"
+                            :src="currentImg"
+                            :style="imgStyle"
+                            @load="handleImgLoad"
+                            @error="handleImgError"
+                            @mousedown="handleMouseDown"/>
+                    <div class="xj-image-viewer-info" v-if="i === index">
+                         {{i}}
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </transition>
@@ -69,7 +76,7 @@
     const mousewheelEventName = isFirefox() ? 'DOMMouseScroll' : 'mousewheel';
 
     export default {
-        name: 'elImageViewer',
+        name: 'XjImageViewer',
 
         props: {
             urlList: {
@@ -293,3 +300,19 @@
         }
     };
 </script>
+<style>
+    .xj-image-viewer__canvas{
+        position: relative;
+    }
+    .xj-image-viewer-info{
+        position: absolute;
+        bottom: 0;
+        background:rgba(0,0,0,0.6);;
+        width: 100%;
+        text-align: center;
+        color: #D1AA76;
+        height: 40px;
+        line-height: 40px;
+        left: 0;
+    }
+</style>
