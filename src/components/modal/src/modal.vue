@@ -14,13 +14,6 @@
       @click.self="handleWrapperClick">
       <transition name="fade">
         <div class="at-modal" :style="modalStyle" v-show="visible">
-          <div class="at-modal__header" v-if="showHead && ($slots.header || this.title)">
-            <div class="at-modal__title">
-              <slot name="header">
-                <p>{{ title }}</p>
-              </slot>
-            </div>
-          </div>
           <div class="at-modal__body">
             <slot>
               <p>{{ content }}</p>
@@ -29,13 +22,8 @@
               </div>
             </slot>
           </div>
-          <div class="at-modal__footer" v-if="showFooter">
-            <slot name="footer">
-              <button type="primary" v-show="showConfirmButton" @click.native="handleAction('confirm')">确认</button>
-            </slot>
-          </div>
           <i v-if="isIconType" class="icon at-modal__icon" :class="iconClass"></i>
-          <span v-if="showClose" class="at-modal__close" @click="handleAction('cancel')"><i class="icon icon-x"></i></span>
+          <span v-if="showClose" class="at-modal__close" @click="handleAction('cancel')"><i class="xjicon iconshanchu"></i></span>
         </div>
       </transition>
     </div>

@@ -9,6 +9,7 @@ import Menu from './components/menu'
 import Submenu from './components/menu/src/submenu'
 import MenuItem from './components/menu/src/menu-item'
 import Message from './components/message'
+import Modal from './components/modal'
 Vue.prototype.$Message = Message
 const components = {
     Rows,
@@ -18,7 +19,8 @@ const components = {
     Image,
     Menu,
     Submenu,
-    MenuItem
+    MenuItem,
+    Modal
 }
 //
 // function install (Vue) {
