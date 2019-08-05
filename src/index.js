@@ -10,6 +10,7 @@ import Submenu from './components/menu/src/submenu'
 import MenuItem from './components/menu/src/menu-item'
 import Message from './components/message'
 import Modal from './components/modal'
+import Pagination from './components/pagination'
 Vue.prototype.$Message = Message
 const components = {
     Rows,
@@ -20,7 +21,8 @@ const components = {
     Menu,
     Submenu,
     MenuItem,
-    Modal
+    Modal,
+    Pagination
 }
 //
 // function install (Vue) {

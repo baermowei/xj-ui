@@ -13,7 +13,7 @@
         'xj-pagination--disabled': this.currentPage === 1
       }"
       @click="handlePrev">
-      <i class="icon icon-chevron-left"></i>
+      <i class="xjicon iconxiangzuo1"></i>
     </li>
     <div class="xj-pagination__simple-paging">
       <input type="text" class="xj-input__original" :value="currentPage" @keydown="handleKeydown" @keyup="handleKeyup" @change="handleKeyup">
@@ -27,7 +27,7 @@
         'xj-pagination--disabled': this.currentPage === this.totalPage
       }"
       @click="handleNext">
-      <i class="icon icon-chevron-right"></i>
+      <i class="xjicon iconxiangyou1"></i>
     </li>
   </ul>
   <!-- E 极简分页 -->
@@ -47,7 +47,7 @@
         'xj-pagination--disabled': this.currentPage === 1
       }"
       @click="handlePrev">
-      <i class="icon icon-chevron-left"></i>
+      <i class="xjicon iconxiangzuo1"></i>
     </li>
     <template v-if="totalPage < 9">
       <li
@@ -75,7 +75,7 @@
         'xj-pagination--disabled': this.currentPage === this.totalPage
       }"
       @click="handleNext">
-      <i class="icon icon-chevron-right"></i>
+      <i class="xjicon iconxiangyou1"></i>
     </li>
     <!--<div v-if="showSizer" class="xj-pagination__sizer">-->
       <!--<xj-select v-model="currentPageSize" :size="size" @on-change="changeSize">-->
@@ -94,7 +94,7 @@
 <script>
 
   export default {
-    name: 'AtPagination',
+    name: 'Pagination',
 
     props: {
       current: {
