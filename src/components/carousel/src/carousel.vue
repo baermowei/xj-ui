@@ -9,28 +9,34 @@
             <transition
                     v-if="arrowDisplay"
                     name="carousel-arrow-left">
-                <button
+                <div
                         type="button"
                         v-show="(arrow === 'always' || hover) && (loop || activeIndex > 0)"
                         @mouseenter="handleButtonEnter('left')"
                         @mouseleave="handleButtonLeave"
                         @click.stop="throttledArrowClick(activeIndex - 1)"
                         class="xj-carousel__arrow xj-carousel__arrow--left">
-                    <i class="xj-icon-arrow-left"></i>
-                </button>
+                    <slot name="left">
+                            左边
+                    </slot>
+
+                </div>
             </transition>
             <transition
                     v-if="arrowDisplay"
                     name="carousel-arrow-right">
-                <button
+                <div
                         type="button"
                         v-show="(arrow === 'always' || hover) && (loop || activeIndex < items.length - 1)"
                         @mouseenter="handleButtonEnter('right')"
                         @mouseleave="handleButtonLeave"
                         @click.stop="throttledArrowClick(activeIndex + 1)"
                         class="xj-carousel__arrow xj-carousel__arrow--right">
-                    <i class="xj-icon-arrow-right"></i>
-                </button>
+                    <slot name="right">
+                            右边
+                    </slot>
+
+                </div>
             </transition>
             <slot></slot>
         </div>
@@ -46,9 +52,9 @@
           { 'is-active': index === activeIndex }]"
                     @mouseenter="throttledIndicatorHover(index)"
                     @click.stop="handleIndicatorClick(index)">
-                <button class="xj-carousel__button">
+                <div class="xj-carousel__button">
                     <span v-if="hasLabel">{{ item.label }}</span>
-                </button>
+                </div>
             </li>
         </ul>
     </div>
@@ -59,7 +65,7 @@
     import { addResizeListener, removeResizeListener } from '../../../utils/resize-event';
 
     export default {
-        name: 'ElCarousel',
+        name: 'Carousel',
 
         props: {
             initialIndex: {
@@ -202,7 +208,7 @@
             },
 
             updateItems() {
-                this.items = this.$children.filter(child => child.$options.name === 'ElCarouselItem');
+                this.items = this.$children.filter(child => child.$options.name === 'CarouselItem');
             },
 
             resetItemPosition(oldIndex) {
@@ -306,6 +312,7 @@
 <style lang="scss">
     .xj-carousel {
         position: relative;
+        height: 100%;
     }
 
     .xj-carousel--horizontal {
@@ -318,28 +325,19 @@
 
     .xj-carousel__container {
         position: relative;
-        height: 300px;
     }
 
     .xj-carousel__arrow {
         position: absolute;
         top: 50%;
-        z-index: 10;
+        z-index: 3;
         margin: 0;
         padding: 0;
-        width: 36px;
-        height: 36px;
         outline: 0;
         border: none;
-        border-radius: 50%;
-        background-color: rgba(31,45,61,.11);
-        color: #FFF;
         text-align: center;
-        font-size: 12px;
         cursor: pointer;
-        -webkit-transition: .3s;
         transition: .3s;
-        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
     }
 
@@ -351,9 +349,6 @@
         right: 16px;
     }
 
-    .xj-carousel__arrow:hover {
-        background-color: rgba(31,45,61,.23);
-    }
 
     .xj-carousel__arrow i {
         cursor: pointer;
@@ -370,14 +365,12 @@
     .xj-carousel__indicators--horizontal {
         bottom: 0;
         left: 50%;
-        -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
     }
 
     .xj-carousel__indicators--vertical {
         top: 50%;
         right: 0;
-        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
     }
 
@@ -389,14 +382,6 @@
         transform: none;
     }
 
-    .xj-carousel__indicators--outside .xj-carousel__indicator:hover button {
-        opacity: .64;
-    }
-
-    .xj-carousel__indicators--outside button {
-        background-color: #C0C4CC;
-        opacity: .24;
-    }
 
     .xj-carousel__indicators--labels {
         right: 0;
@@ -407,14 +392,9 @@
     }
 
     .xj-carousel__indicators--labels .xj-carousel__button {
-        padding: 2px 18px;
         width: auto;
         height: auto;
-        font-size: 12px;
-    }
 
-    .xj-carousel__indicators--labels .xj-carousel__indicator {
-        padding: 6px 4px;
     }
 
     .xj-carousel__indicator {
@@ -422,52 +402,18 @@
         cursor: pointer;
     }
 
-    .xj-carousel__indicator:hover button {
-        opacity: .72;
-    }
-
     .xj-carousel__indicator--horizontal {
         display: inline-block;
-        padding: 12px 4px;
     }
 
-    .xj-carousel__indicator--vertical {
-        padding: 4px 12px;
-    }
-
-    .xj-carousel__indicator--vertical .xj-carousel__button {
-        width: 2px;
-        height: 15px;
-    }
-
-    .xj-carousel__indicator.is-active button {
-        opacity: 1;
-    }
-
-    .xj-carousel__button {
-        display: block;
-        margin: 0;
-        padding: 0;
-        width: 30px;
-        height: 2px;
-        outline: 0;
-        border: none;
-        background-color: #FFF;
-        opacity: .48;
-        cursor: pointer;
-        -webkit-transition: .3s;
-        transition: .3s;
-    }
 
     .carousel-arrow-left-enter,.carousel-arrow-left-leave-active {
         opacity: 0;
-        -webkit-transform: translateY(-50%) translateX(-10px);
         transform: translateY(-50%) translateX(-10px);
     }
 
     .carousel-arrow-right-enter,.carousel-arrow-right-leave-active {
         opacity: 0;
-        -webkit-transform: translateY(-50%) translateX(10px);
         transform: translateY(-50%) translateX(10px);
     }
 </style>

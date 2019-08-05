@@ -2,9 +2,13 @@
 import Vue from 'vue'
 import Rows from './components/rows'
 import Backtop from './components/backtop'
+import Carousel from './components/carousel'
+import CarouselItem from './components/carousel/src/item'
 const components = {
     Rows,
-    Backtop
+    Backtop,
+    Carousel,
+    CarouselItem
 }
 //
 // function install (Vue) {

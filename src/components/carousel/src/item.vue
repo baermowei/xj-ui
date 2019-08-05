@@ -24,7 +24,7 @@
     import { autoprefixer } from '../../../utils/util';
     const CARD_SCALE = 0.83;
     export default {
-        name: 'ElCarouselItem',
+        name: 'CarouselItem',
 
         props: {
             name: String,
@@ -156,18 +156,13 @@
     }
 
     .xj-carousel__item.is-animating {
-        -webkit-transition: -webkit-transform .4s ease-in-out;
-        transition: -webkit-transform .4s ease-in-out;
         transition: transform .4s ease-in-out;
-        transition: transform .4s ease-in-out,-webkit-transform .4s ease-in-out
     }
 
     .xj-carousel__item--card {
         width: 50%;
-        -webkit-transition: -webkit-transform .4s ease-in-out;
-        transition: -webkit-transform .4s ease-in-out;
         transition: transform .4s ease-in-out;
-        transition: transform .4s ease-in-out,-webkit-transform .4s ease-in-out
+
     }
 
     .xj-carousel__item--card.is-in-stage {
@@ -186,8 +181,6 @@
     .xj-carousel__mask {
         width: 100%;
         background-color: #fff;
-        opacity: .24;
-        -webkit-transition: .2s;
         transition: .2s
     }
 

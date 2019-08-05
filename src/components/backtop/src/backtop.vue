@@ -100,5 +100,6 @@
     .xj-backtop{
         position: fixed;
         top: 50%;
+        z-index: 4;
     }
 </style>
