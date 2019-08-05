@@ -2,15 +2,19 @@
     <transition name="el-fade-in">
         <div
                 v-if="visible"
-                @click.stop="handleClick"
                 :style="{
-        'right': styleRight,
-        'bottom': styleBottom
+        'right': styleRight
       }"
                 class="xj-backtop">
-            <slot>
-               返回顶部
+            <slot name="rightbar">
             </slot>
+
+                <div @click.stop="handleClick">
+                    <slot>
+                    返回顶部
+                    </slot>
+                </div>
+
         </div>
     </transition>
 </template>
@@ -29,11 +33,7 @@
             target: [String],
             right: {
                 type: Number,
-                default: 40
-            },
-            bottom: {
-                type: Number,
-                default: 40
+                default: 18
             }
         },
 
@@ -46,9 +46,6 @@
         },
 
         computed: {
-            styleBottom() {
-                return `${this.bottom}px`;
-            },
             styleRight() {
                 return `${this.right}px`;
             }
@@ -88,7 +85,7 @@
                         clearInterval(interval);
                         return;
                     }
-                    step += 10;
+                    step += 100;
                     el.scrollTop -= step;
                 }, 20);
             }
@@ -102,5 +99,6 @@
 <style lang="scss">
     .xj-backtop{
         position: fixed;
+        top: 50%;
     }
 </style>

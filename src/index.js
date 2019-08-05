@@ -1,8 +1,10 @@
 
 import Vue from 'vue'
 import Rows from './components/rows'
+import Backtop from './components/backtop'
 const components = {
-    Rows
+    Rows,
+    Backtop
 }
 //
 // function install (Vue) {
