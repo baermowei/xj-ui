@@ -1,8 +1,8 @@
 
 import Vue from 'vue'
-import HelloWorld from './components/HelloWorld'
+import Rows from './components/rows'
 const components = {
-    HelloWorld
+    Rows
 }
 //
 // function install (Vue) {

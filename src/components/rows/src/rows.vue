@@ -11,14 +11,14 @@
 
 <script>
     export default {
-        name: "rows",
+        name: "Rows",
         props:{
             rowspan:{
                 default: 4,
                 type: [Number,String]
             },
             space:{
-                default:'1%'
+                default:'0%'
             },
             rowsDate:{
                 type:Array,
