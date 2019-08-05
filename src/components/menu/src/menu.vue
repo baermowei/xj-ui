@@ -199,7 +199,7 @@
                     width: 100%;
                     height: 2px;
                     left: 0;
-                    background-color: red;
+                    background-color: #D1AA76;
                     bottom: 0;
                     transform: scaleX(0);
                     transition: all .15s;
@@ -231,6 +231,7 @@
                     height: 2px;
                     left: 0;
                     bottom: 0;
+                    background-color: #D1AA76;
                     transform: scaleX(0);
                     transition: all .15s;
                 }
@@ -250,7 +251,6 @@
                     display: block;
                     float: none;
                     height: inherit;
-                    line-height: 1.5;
 
                     .xj-menu__submenu-title {
 

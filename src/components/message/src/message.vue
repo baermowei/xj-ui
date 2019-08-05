@@ -13,7 +13,7 @@
                     v-show="visible">
 
                     <div v-if="!vnode">
-                        <i class="icon at-message__icon"  v-if="type" :class="iconClass"></i>
+                        <!--<i class="icon at-message__icon"  v-if="type" :class="iconClass"></i>-->
                         <span class="xj-message__content">{{ message }}</span>
                     </div>
                     <div v-else :class="'xj-content-vnode-'+type" v-html="vnode"></div>

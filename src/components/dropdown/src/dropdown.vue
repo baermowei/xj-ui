@@ -57,9 +57,7 @@
 
     .xj-dropdown-menu {
         position: relative;
-        padding: 0;
         width: inherit;
-        font-size: 0;
         list-style: none;
 
         &__item {

@@ -11,7 +11,7 @@
     ref="trigger">
     <div class="xj-menu__submenu-title" ref="reference" @click.stop="handleClick">
       <slot name="title"></slot>
-      <i class="icon icon-chevron-down at-menu__submenu-icon"></i>
+      <!--<i class="icon icon-chevron-down at-menu__submenu-icon"></i>-->
     </div>
     <collapse-transition v-if="mode === 'inline'">
       <ul class="xj-menu" v-show="isOpen"><slot></slot></ul>
