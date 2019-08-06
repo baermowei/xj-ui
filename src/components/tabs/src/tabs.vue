@@ -10,25 +10,6 @@
         <slot name="extra"></slot>
       </div>
       <div class="xj-tabs__nav">
-        <!-- S prev btn -->
-        <span class="xj-tabs__prev"
-          v-if="scrollable"
-          :class="{
-            'xj-tabs__prev--disabled': !prevable
-          }"
-          @click="scrollPrev">
-          <i class="icon icon-chevron-left"></i>
-        </span>
-        <!-- E prev btn -->
-        <!-- S next btn -->
-        <span class="xj-tabs__next"
-          v-if="scrollable"
-          :class="{
-            'xj-tabs__next--disabled': !nextable
-          }"
-          @click="scrollNext">
-          <i class="icon icon-chevron-right"></i>
-        </span>
         <!-- E next btn -->
         <!-- S Tab nav -->
         <div class="xj-tabs__nav-wrap">
@@ -41,27 +22,11 @@
                   'xj-tabs-nav__item--closable': item.closable
                 }"
                 v-for="(item, index) in navList" :key="index"
-                @click="setNavByIndex(index)">
-                <!-- S icon -->
-                <i v-if="item.icon"
-                  class="icon xj-tabs-nav__icon"
-                  :class="{
-                    [item.icon]: item.icon
-                  }">
-                </i>{{ item.label }}
-                <!-- E icon -->
-                <!-- S close btn -->
-                <span class="xj-tabs-nav__close"
-                  v-if="item.closable"
-                  @click.stop="removeHandle(index)">
-                  <i class="icon icon-x"></i>
-                </span>
-                <!-- E close btn -->
+                @click="setNavByIndex(index)">{{ item.label }}
               </div>
             </div>
           </div>
         </div>
-        <!-- E Tab nav -->
       </div>
     </div>
     <div class="xj-tabs__body" :style="tabsBodyTranslateStyle">
@@ -72,7 +37,7 @@
 
 <script>
 export default {
-  name: 'AtTabs',
+  name: 'Tabs',
   props: {
     value: {
       type: String
@@ -198,7 +163,7 @@ export default {
     },
     getTabs () {
       return this.$children.filter(item =>
-        item.$options.name === 'AtTabPane'
+        item.$options.name === 'TabPane'
       )
     },
     removeHandle (index) {

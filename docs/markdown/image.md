@@ -3,7 +3,7 @@
 
 ### 基础用法
 
-:::demo 可通过`fit`确定图片如何适应到容器框，同原生 [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)。
+ 可通过`fit`确定图片如何适应到容器框，同原生 [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)。
 ```html
 <div class="demo-image">
   <div class="block" v-for="fit in fits" :key="fit">
@@ -30,87 +30,23 @@
 
 ### 占位内容
 
-:::demo 可通过`slot = placeholder`可自定义占位内容
-```html
-<div class="demo-image__placeholder">
-  <div class="block">
-    <span class="demonstration">默认</span>
-    <xj-image :src="src"></xj-image>
-  </div>
-  <div class="block">
-    <span class="demonstration">自定义</span>
-    <xj-image :src="src">
-      <div slot="placeholder" class="image-slot">
-        加载中<span class="dot">...</span>
-      </div>
-    </xj-image>
-  </div>
-</div>
+ 可通过`slot = placeholder`可自定义占位内容
 
-<script>
-  export default {
-    data() {
-      return {
-        src: 'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg'
-      }
-    }
-  }
-</script>
-```
-:::
+
 
 ### 加载失败
 
-:::demo 可通过`slot = error`可自定义加载失败内容
-```html
-<div class="demo-image__error">
-  <div class="block">
-    <span class="demonstration">默认</span>
-    <xj-image></xj-image>
-  </div>
-  <div class="block">
-    <span class="demonstration">自定义</span>
-    <xj-image>
-      <div slot="error" class="image-slot">
-        <i class="xj-icon-picture-outline"></i>
-      </div>
-    </xj-image>
-  </div>
-</div>
-```
-:::
+ 可通过`slot = error`可自定义加载失败内容
+
 
 ### 懒加载
 
-:::demo 可通过`lazy`开启懒加载功能，当图片滚动到可视范围内才会加载。可通过`scroll-container`来设置滚动容器，若未定义，则为最近一个`overflow`值为`auto`或`scroll`的父元素。
-```html
-<div class="demo-image__lazy">
-  <xj-image v-for="url in urls" :key="url" :src="url" lazy></xj-image>
-</div>
+ 可通过`lazy`开启懒加载功能，当图片滚动到可视范围内才会加载。可通过`scroll-container`来设置滚动容器，若未定义，则为最近一个`overflow`值为`auto`或`scroll`的父元素。
 
-<script>
-  export default {
-    data() {
-      return {
-        urls: [
-          'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
-          'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
-          'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
-          'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
-          'https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg',
-          'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
-          'https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg'
-        ]
-      }
-    }
-  }
-</script>
-```
-:::
 
 ### 大图预览
 
-:::demo 可通过 `previewSrcList` 开启预览大图的功能。
+ 可通过 `previewSrcList` 开启预览大图的功能。
 ```html
 <div class="demo-image__preview">
   <xj-image 

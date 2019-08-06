@@ -15,7 +15,7 @@
     import PopoverMixin from '../../../mixins/popover'
 
     export default {
-        name: 'AtDropdown',
+        name: 'Dropdown',
         directives: { Clickoutside },
         mixins: [PopoverMixin],
         props: {

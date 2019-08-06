@@ -16,7 +16,7 @@
 
 ### 使用举例
 
-```
+```html
     <xj-rows :rowsDate="[3,4,8,9,9,7]" rowspan="5" space="4%">
       <template v-slot="item">
         <div>{{item}}</div>

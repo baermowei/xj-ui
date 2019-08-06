@@ -11,7 +11,12 @@ import MenuItem from './components/menu/src/menu-item'
 import Message from './components/message'
 import Modal from './components/modal'
 import Pagination from './components/pagination'
+import Dropdown from './components/dropdown'
+import Popover from './components/popover'
+import Tabs from './components/tabs'
+import TabPane from './components/tabs/src/tab-pane'
 Vue.prototype.$Message = Message
+
 const components = {
     Rows,
     Backtop,
@@ -22,7 +27,11 @@ const components = {
     Submenu,
     MenuItem,
     Modal,
-    Pagination
+    Pagination,
+    Dropdown,
+    Popover,
+    Tabs,
+    TabPane
 }
 //
 // function install (Vue) {

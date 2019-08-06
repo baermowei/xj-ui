@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'AtTabPane',
+  name: 'TabPane',
   props: {
     name: {
       type: String

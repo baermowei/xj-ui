@@ -29,64 +29,18 @@
 可以将指示器的显示位置设置在容器外部
 
 :::demo `indicator-position`属性定义了指示器的位置。默认情况下，它会显示在走马灯内部，设置为`outside`则会显示在外部；设置为`none`则不会显示指示器。
-```html
-<template>
-  <el-carousel indicator-position="outside">
-    <el-carousel-item v-for="item in 4" :key="item">
-      <h3>{{ item }}</h3>
-    </el-carousel-item>
-  </el-carousel>
-</template>
 
-```
-:::
 
 ### 切换箭头
 可以设置切换箭头的显示时机
 
 :::demo `arrow`属性定义了切换箭头的显示时机。默认情况下，切换箭头只有在鼠标 hover 到走马灯上时才会显示；若将`arrow`设置为`always`，则会一直显示；设置为`never`，则会一直隐藏。
-```html
-<template>
-  <el-carousel :interval="5000" arrow="always">
-    <el-carousel-item v-for="item in 4" :key="item">
-      <h3>{{ item }}</h3>
-    </el-carousel-item>
-  </el-carousel>
-</template>
 
-```
-:::
 
-### 卡片化
-当页面宽度方向空间空余，但高度方向空间匮乏时，可使用卡片风格
-
-:::demo 将`type`属性设置为`card`即可启用卡片模式。从交互上来说，卡片模式和一般模式的最大区别在于，可以通过直接点击两侧的幻灯片进行切换。
-```html
-<template>
-  <el-carousel :interval="4000" type="card" height="200px">
-    <el-carousel-item v-for="item in 6" :key="item">
-      <h3 class="medium">{{ item }}</h3>
-    </el-carousel-item>
-  </el-carousel>
-</template>
-
-```
-:::
 
 ### 方向
 默认情况下，`direction` 为 `horizontal`。通过设置 `direction` 为 `vertical` 来让走马灯在垂直方向上显示。
-:::demo
-```html
-<template>
-  <el-carousel height="200px" direction="vertical" :autoplay="false">
-    <el-carousel-item v-for="item in 3" :key="item">
-      <h3 class="medium">{{ item }}</h3>
-    </el-carousel-item>
-  </el-carousel>
-</template>
 
-```
-:::
 
 ### Carousel Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
