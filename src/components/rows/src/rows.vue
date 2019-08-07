@@ -49,15 +49,10 @@
         overflow: hidden;
         margin: auto;
         width: 100%;
-        max-width: 1200px;
-
     }
     .xj-row-ui{
         overflow: hidden;
-        background-color: green;
         >li{
-            height: 300px;
-            background-color: pink;
             float: left;
         }
 

@@ -103,7 +103,7 @@
           popover.style.left = 'initial'
           popover.style.right = `-${trigger.offsetWidth + 4}px`
           popover.style.top = '0'
-        } else if (parent && name !== 'AtSubmenu') {
+        } else if (parent && name !== 'Submenu') {
           popover.style.left = '0'
           popover.style.right = 'initial'
           popover.style.top = `${trigger.offsetHeight + 2}px`
@@ -119,7 +119,7 @@
         const opened = this.isOpen
         if (this.inlineCollapsed) {
           this.parentMenu.$children.forEach(item => {
-            if (item.$options.name === 'AtSubmenu') {
+            if (item.$options.name === 'Submenu') {
               item.isOpen = false
             }
           })
@@ -133,7 +133,7 @@
         clearTimeout(this.timeout)
         this.timeout = setTimeout(() => {
           this.isOpen = true
-        }, 0)
+        }, 200)
       },
       handleMouseLeave () {
         if (this.disabled || this.mode === 'inline') return
@@ -149,7 +149,7 @@
         if (this.mode !== 'inline') {
           this.isOpen = false
         }
-        this.dispatch('AtMenu', 'on-menu-item-select', name)
+        this.dispatch('Menu', 'on-menu-item-select', name)
       })
       this.$on('on-update-active', status => {
         this.active = status

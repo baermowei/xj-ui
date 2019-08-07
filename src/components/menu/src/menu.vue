@@ -17,7 +17,7 @@
         props: {
             mode: {
                 type: String,
-                default: 'horizontal',
+                default: 'inline',
                 validator: val => ['inline', 'horizontal', 'vertical'].indexOf(val) > -1
             },
             activeName: [String, Number],
@@ -64,14 +64,14 @@
                     this.currentActiveName = -1
                 }
 
-                const submenus = findComponentsDownward(this, 'AtSubmenu')
+                const submenus = findComponentsDownward(this, 'Submenu')
 
                 if (submenus && submenus.length) {
                     submenus.forEach(submenu => {
                         submenu.$emit('on-update-active', false)
                     })
                 }
-                this.broadcast('AtMenuItem', 'on-update-active', this.currentActiveName)
+                this.broadcast('MenuItem', 'on-update-active', this.currentActiveName)
             },
             routeToMenuItem (item) {
                 const route = item.to || {}

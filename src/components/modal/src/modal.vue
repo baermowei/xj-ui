@@ -1,29 +1,25 @@
 <template>
   <div>
     <transition name="fade">
-      <div class="at-modal__mask" v-show="visible" @click="handleMaskClick"></div>
+      <div class="xj-modal__mask" v-show="visible" @click="handleMaskClick"></div>
     </transition>
     <!-- / mask -->
     <div
-      class="at-modal__wrapper"
+      class="xj-modal__wrapper"
       :class="{
-        'at-modal--hidden': !wrapShow,
-        'at-modal--confirm': isIconType,
-        [`at-modal--confirm-${type}`]: isIconType
+        'xj-modal--hidden': !wrapShow,
+        'xj-modal--confirm': isIconType,
+        [`xj-modal--confirm-${type}`]: isIconType
       }"
       @click.self="handleWrapperClick">
       <transition name="fade">
-        <div class="at-modal" :style="modalStyle" v-show="visible">
-          <div class="at-modal__body">
+        <div class="xj-modal" :style="modalStyle" v-show="visible">
+          <div class="xj-modal__body">
             <slot>
-              <p>{{ content }}</p>
-              <div class="at-modal__input" v-if="showInput">
-                <at-input v-model="inputValue" :placeholder="inputPlaceholder" @keyup.enter.native="handleAction('confirm')" ref="input"></at-input>
-              </div>
+              <div>{{ content }}</div>
             </slot>
           </div>
-          <i v-if="isIconType" class="icon at-modal__icon" :class="iconClass"></i>
-          <span v-if="showClose" class="at-modal__close" @click="handleAction('cancel')"><i class="xjicon iconshanchu"></i></span>
+          <span v-if="showClose" class="xj-modal__close" @click="handleAction('cancel')"><i class="xjicon iconshanchu"></i></span>
         </div>
       </transition>
     </div>
@@ -189,7 +185,7 @@
 </script>
 <style lang="scss">
 
-  .at-modal {
+  .xj-modal {
     position: relative;
     width: auto;
     margin: 0 auto;

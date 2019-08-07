@@ -49,24 +49,25 @@
             handleClick (evt) {
                 evt.preventDefault()
                 if (this.disabled) return
-                const parents = findComponentsUpward(this, 'AtSubmenu')
+                const parents = findComponentsUpward(this, 'Submenu')
 
                 if (parents && parents.length) {
                     parents.forEach(parent => {
                         parent.$emit('on-menu-item-select', this)
                     })
                 } else {
-                    this.dispatch('AtMenu', 'on-menu-item-select', this)
+                    this.dispatch('Menu', 'on-menu-item-select', this)
                 }
             }
         },
         mounted () {
             this.$on('on-update-active', name => {
+                console.log(name,888888)
                 this.$nextTick(() => {
                     if (this.name === name || (this.$refs.link && this.$refs.link.$el.classList.contains('router-link-active'))) {
                         this.active = true
 
-                        const parents = findComponentsUpward(this, 'AtSubmenu')
+                        const parents = findComponentsUpward(this, 'Submenu')
                         if (parents && parents.length) {
                             parents.forEach(parent => {
                                 parent.$emit('on-update-active', true)
