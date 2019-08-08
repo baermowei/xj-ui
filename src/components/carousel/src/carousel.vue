@@ -17,7 +17,7 @@
                         @click.stop="throttledArrowClick(activeIndex - 1)"
                         class="xj-carousel__arrow xj-carousel__arrow--left">
                     <slot name="left">
-                            左边
+                            <i class="xjicon iconxiangzuo1"></i>
                     </slot>
 
                 </div>
@@ -33,7 +33,7 @@
                         @click.stop="throttledArrowClick(activeIndex + 1)"
                         class="xj-carousel__arrow xj-carousel__arrow--right">
                     <slot name="right">
-                            右边
+                            <i class="xjicon iconxiangyou1"></i>
                     </slot>
 
                 </div>

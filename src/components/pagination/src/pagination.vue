@@ -39,7 +39,7 @@
       [`xj-pagination--${size}`]: size
     }">
     <span class="xj-pagination__total" v-show="showTotal">
-      <slot name="total">{{ `${('at.pagination.total')} ${total} ${('at.pagination.items')}` }}</slot>
+      <slot name="total">{{ `共 ${total} 条` }}</slot>
     </span>
     <li
       class="xj-pagination__prev"
@@ -60,13 +60,13 @@
     </template>
     <template v-else>
       <li class="xj-pagination__item" :class="{ 'xj-pagination__item--active': currentPage === 1 }" @click="changePage(1)">1</li>
-      <li class="xj-pagination__item xj-pagination__item--jump-prev" :title="t('at.pagination.prev5Text')" v-if="currentPage > 4" @click="handleJumpPrev"><i class="icon icon-chevrons-left"></i></li>
+      <li class="xj-pagination__item xj-pagination__item--jump-prev" title="向前5页" v-if="currentPage > 4" @click="handleJumpPrev"><i class="xjicon iconshuangjiantou"></i></li>
       <li class="xj-pagination__item" v-if="currentPage > 3" @click="changePage(currentPage - 2)">{{ currentPage - 2 }}</li>
       <li class="xj-pagination__item" v-if="currentPage > 2" @click="changePage(currentPage - 1)">{{ currentPage - 1 }}</li>
       <li class="xj-pagination__item xj-pagination__item--active" v-if="currentPage !== 1 && currentPage !== totalPage">{{ currentPage }}</li>
       <li class="xj-pagination__item" v-if="currentPage < totalPage - 1" @click="changePage(currentPage + 1)">{{ currentPage + 1 }}</li>
       <li class="xj-pagination__item" v-if="currentPage < totalPage - 2" @click="changePage(currentPage + 2)">{{ currentPage + 2 }}</li>
-      <li class="xj-pagination__item xj-pagination__item--jump-next" :title="t('at.pagination.next5Text')" v-if="currentPage < totalPage - 3" @click="handleJumpNext"><i class="icon icon-chevrons-right"></i></li>
+      <li class="xj-pagination__item xj-pagination__item--jump-next" title="向后5页" v-if="currentPage < totalPage - 3" @click="handleJumpNext"><i class="xjicon iconshuangjiantou-right"></i></li>
       <li class="xj-pagination__item" v-if="totalPage > 1" :class="{ 'xj-pagination__item--active' : currentPage === totalPage }" @click="changePage(totalPage)">{{ totalPage }}</li>
     </template>
     <li
@@ -85,7 +85,7 @@
     <div class="xj-pagination__quickjump" v-if="showQuickjump">
       <span>去</span>
       <input type="text" class="xj-input__original" v-model="jumpPageNum" @keydown="handleKeydown" @keyup.enter="changePage()">
-      <span>22</span>
+      <span>页</span>
     </div>
   </ul>
   <!-- E 基础分页 -->

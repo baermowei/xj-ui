@@ -1,5 +1,5 @@
 <template>
-    <section class="xj-row">
+    <section class="xj-row clearfix">
     <ul class="xj-row-ui">
         <li v-for="(i,k) of rowsDate" :key="k" class="xj-row" :style="{width: rowStyle.width,marginRight:(k+1)%rowspan?space:'0'}">
             <slot :item="i"></slot>
@@ -46,7 +46,6 @@
 
 <style lang="scss">
     .xj-row{
-        overflow: hidden;
         margin: auto;
         width: 100%;
     }
