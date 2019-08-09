@@ -63,7 +63,7 @@
         mounted () {
             this.$on('on-update-active', name => {
                 this.$nextTick(() => {
-                    if (this.name === name || (this.$refs.link && this.$refs.link.classList.contains('nuxt-link-active'))) {
+                    if (this.name === name || (this.$refs.link && this.$refs.link.$el.classList.contains('router-link-active'))) {
                         this.active = true
 
                         const parents = findComponentsUpward(this, 'Submenu')

@@ -50,7 +50,6 @@
         width: 100%;
     }
     .xj-row-ui{
-        overflow: hidden;
         >li{
             float: left;
         }

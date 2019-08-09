@@ -1,6 +1,6 @@
 {
   "name": "xj-pcui",
-  "version": "0.1.4",
+  "version": "0.1.7",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -19,7 +19,8 @@
     "core-js": "^2.6.5",
     "resize-observer-polyfill": "^1.5.1",
     "throttle-debounce": "^2.1.0",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
