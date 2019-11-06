@@ -297,6 +297,7 @@
         },
         mounted() {
             this.deviceSupportInstall();
+            document.body.append(this.$el);
         }
     };
 </script>

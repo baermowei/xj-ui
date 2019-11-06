@@ -209,9 +209,11 @@
             },
             clickHandler() {
                 this.showViewer = true;
+                 document.body.style.overflowY='hidden';
             },
             closeViewer() {
                 this.showViewer = false;
+                 document.body.style.overflowY='auto';
             }
         }
     };
