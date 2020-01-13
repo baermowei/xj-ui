@@ -208,8 +208,10 @@
                 }
             },
             clickHandler() {
-                this.showViewer = true;
-                 document.body.style.overflowY='hidden';
+                if(this.previewSrcList&&this.previewSrcList.length){
+                    this.showViewer = true;
+                    document.body.style.overflowY='hidden';
+                }
             },
             closeViewer() {
                 this.showViewer = false;
