@@ -4,7 +4,7 @@ import Rows from './components/rows'
 import Backtop from './components/backtop'
 import Carousel from './components/carousel'
 import CarouselItem from './components/carousel/src/item'
-import Image from './components/image'
+import XjImage from './components/image'
 import Menu from './components/menu'
 import Submenu from './components/menu/src/submenu'
 import MenuItem from './components/menu/src/menu-item'
@@ -22,7 +22,6 @@ const components = {
     Backtop,
     Carousel,
     CarouselItem,
-    Image,
     Menu,
     Submenu,
     MenuItem,
@@ -45,7 +44,7 @@ Object.keys(components).forEach(name => {
     Vue.component('Xj'+name, components[name])
 })
 
-
+Vue.component("XjImage", XjImage)
 
 
 // /**

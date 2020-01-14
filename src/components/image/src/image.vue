@@ -36,7 +36,7 @@
     };
 
     export default {
-        name: 'Image',
+        name: 'XjImage',
 
         inheritAttrs: false,
 
@@ -90,7 +90,7 @@
         },
 
         watch: {
-            src(val) {
+            src() {
                 this.show && this.loadImage();
             },
             show(val) {
