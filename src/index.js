@@ -30,7 +30,10 @@ const components = {
     Dropdown,
     Popover,
     Tabs,
-    TabPane
+    TabPane,
+    Radio,
+    RadioGroup,
+    RadioButton,
 }
 //
 // function install (Vue) {
