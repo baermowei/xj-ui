@@ -1,5 +1,12 @@
 <template>
   <div id="app" style="height: 100000px">
+    <div>
+      <xj-radio-group >
+        <xj-radio label="200-400">200-400m²</xj-radio>
+        <xj-radio label="400-600">400-600m²</xj-radio>
+        <xj-radio label="600+">600m²以上</xj-radio>
+      </xj-radio-group>
+    </div>
       <xj-rows :rowsDate="[{a:22},3,4,8,9,9,7]" rowspan="5" space="4%">
           <template v-slot="item">
               <div>{{item}}</div>

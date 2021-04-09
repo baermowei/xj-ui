@@ -50,7 +50,7 @@ export default {
       this.$emit('input', store)
 
       if (this.isGroup) {
-        this.dispatch('RadioGroup', 'input', store)
+        this.dispatch('XjRadioGroup', 'input', store)
       }
     },
     value (val) {

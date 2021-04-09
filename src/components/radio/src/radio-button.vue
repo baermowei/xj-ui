@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'RadioButton',
+  name: 'XjRadioButton',
   props: {
     name: String,
     label: {
@@ -66,6 +66,10 @@ export default {
 </script>
 
 <style lang="scss">
+@mixin button-size($padding, $font-size) {
+  padding: $padding;
+  font-size: $font-size;
+}
 .xj-radio-button {
   position: relative;
   display: inline-block;

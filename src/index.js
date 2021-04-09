@@ -15,6 +15,9 @@ import Dropdown from './components/dropdown'
 import Popover from './components/popover'
 import Tabs from './components/tabs'
 import TabPane from './components/tabs/src/tab-pane'
+import Radio from './components/radio/src/radio'
+import RadioButton from './components/radio/src/radio-button'
+import RadioGroup from './components/radio/src/radio-group'
 Vue.prototype.$Message = Message
 
 const components = {
