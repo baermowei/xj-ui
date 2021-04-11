@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'XjRadioButton',
+  name: 'RadioButton',
   props: {
     name: String,
     label: {

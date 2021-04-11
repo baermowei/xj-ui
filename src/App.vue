@@ -1,7 +1,7 @@
 <template>
   <div id="app" style="height: 100000px">
     <div>
-      <xj-radio-group >
+      <xj-radio-group v-model="aaaa">
         <xj-radio label="200-400">200-400m²</xj-radio>
         <xj-radio label="400-600">400-600m²</xj-radio>
         <xj-radio label="600+">600m²以上</xj-radio>
@@ -141,6 +141,7 @@ export default {
   },
   data(){
     return{
+      aaaa:'',
       modal1:false,
       srcList: [
         'https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg',

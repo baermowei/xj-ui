@@ -8,7 +8,7 @@
 import Emitter from '../../../mixins/emitter'
 
 export default {
-  name: 'XjRadioGroup',
+  name: 'RadioGroup',
   props: {
     value: [String, Number],
     size: String,
@@ -19,11 +19,11 @@ export default {
   watch: {
     value (value) {
       this.$emit('radio-group-change', value)
-      this.broadcast('XjRadio', 'init-data', value)
+      this.broadcast('Radio', 'init-data', value)
     }
   },
   mounted () {
-    this.broadcast('XjRadio', 'init-data', this.value)
+    this.broadcast('Radio', 'init-data', this.value)
   }
 }
 </script>

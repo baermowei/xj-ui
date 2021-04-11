@@ -3,16 +3,22 @@
         <slot v-if="loading" name="placeholder">
             <div class="xj-image__placeholder"></div>
         </slot>
-        <slot v-else-if="error" name="error">
+        <img
+                v-else-if="error"
+                class="xj-image__inner"
+                :src="errImgUrl"
+                :style="imageStyle"
+                :class="{ 'xj-image__inner--center': alignCenter}">
+        <!-- <slot v-else-if="error" name="error">
             <div class="xj-image__error">加载失败</div>
-        </slot>
+        </slot> -->
         <img
                 v-else
                 class="xj-image__inner"
                 v-bind="$attrs"
                 v-on="$listeners"
                 @click="clickHandler"
-                :src="src"
+                :src="styles?(src+'?x-oss-process=style/'+styles):src"
                 :style="imageStyle"
                 :class="{ 'xj-image__inner--center': alignCenter, 'xj-image__preview': preview }">
         <image-viewer :z-index="zIndex" v-if="preview && showViewer" :on-close="closeViewer" :url-list="previewSrcList"/>
@@ -56,6 +62,14 @@
             zIndex: {
                 type: Number,
                 default: 2000
+            },
+            errImgUrl:{
+                type:String,
+                default:''
+            },
+            styles:{
+                type:String,
+                default:''
             }
         },
 
