@@ -3,15 +3,13 @@
         <slot v-if="loading" name="placeholder">
             <div class="xj-image__placeholder"></div>
         </slot>
-        <img
-                v-else-if="error"
+        <slot v-else-if="error" name="error">
+            <img
                 class="xj-image__inner"
                 :src="errImgUrl"
                 :style="imageStyle"
                 :class="{ 'xj-image__inner--center': alignCenter}">
-        <!-- <slot v-else-if="error" name="error">
-            <div class="xj-image__error">加载失败</div>
-        </slot> -->
+        </slot>
         <img
                 v-else
                 class="xj-image__inner"

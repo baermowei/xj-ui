@@ -42,6 +42,12 @@
               lazy
               :preview-src-list="srcList"
     ></xj-image>
+    <xj-image src="''"
+                  style="width: 100px; height: 100px"
+                  fit="fill"
+                  lazy
+                  :preview-src-list="srcList"
+    ></xj-image>
 
       <xj-menu mode="horizontal" active-name="1">
           <xj-menu-item name="1">导航菜单一</xj-menu-item>

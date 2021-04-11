@@ -1,6 +1,6 @@
 {
   "name": "xj-pcui",
-  "version": "0.2.9",
+  "version": "0.3.1",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
