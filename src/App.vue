@@ -109,6 +109,16 @@
              </ul>
          </template>
       </xj-dropdown>
+      <div style="width:500px;margin:auto">
+        <xj-timeline>
+          <xj-timeline-item ref="timelineitem" v-for="(item,index) in courseOfficial" :key="index">
+            <div class="course-content">
+              <p class="course-title">{{item.date}}--{{item.title}}</p>
+              <p class="course-des">{{item.des}}</p>
+            </div>
+          </xj-timeline-item>
+        </xj-timeline>
+      </div>
 
   </div>
 </template>
@@ -152,7 +162,18 @@ export default {
       srcList: [
         'https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg',
         'https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg'
-      ]
+      ],
+      courseOfficial:[
+        {date:'数字化元年', title:'星杰20周年', des:'经过3年积累开始推动整体数字化革新，同时购置大楼，并开启高端整装业务。'},
+        {date:'2020', title:'产品迭代', des:'多维度精进了全案服务体系，董事长直达号、视频号全面上线。提供有竞争力的产品和服务， 持续为客户创造的价值。'},
+        {date:'2018', title:'重塑价值观', des:'重塑企业核心价值观：以客户为中心、奋斗、创新、分享。'},
+        {date:'2017', title:'平台赋能', des:'星杰云科技平台上线，围绕高端家装行业进行信息化能力建设，全面升级星杰全案服务标准。'},
+        {date:'2015', title:'深耕江浙', des:'开设苏州、南京、宁波、无锡等分公司，完成江浙沪业务阶段布局。'},
+        {date:'2012', title:'业务拓展', des:'星杰进军公装事业和软装事业，开启多元化业务运营。'},
+        {date:'2011', title:'迈出上海', des:'十年积淀，迈出上海，设立杭州分公司。'},
+        {date:'2009', title:'专注高端', des:'完善公司业务定位，聚焦高端家装领域。'},
+        {date:'2001', title:'开创元年', des:'上海，浦东，黄浦江畔，星杰国际设计在陆家嘴创立。'},
+      ],
     }
   },
   created() {

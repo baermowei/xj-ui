@@ -18,6 +18,8 @@ import TabPane from './components/tabs/src/tab-pane'
 import Radio from './components/radio'
 import RadioButton from './components/radio-button'
 import RadioGroup from './components/radio-group'
+import Timeline from './components/timeline'
+import TimelineItem from './components/timeline-item'
 Vue.prototype.$Message = Message
 
 const components = {
@@ -37,6 +39,8 @@ const components = {
     Radio,
     RadioGroup,
     RadioButton,
+    Timeline,
+    TimelineItem
 }
 //
 // function install (Vue) {
