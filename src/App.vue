@@ -119,7 +119,7 @@
           </xj-timeline-item>
         </xj-timeline>
       </div>
-
+      <xj-pagination show-quickjump :total="100" :page-size="1" show-total/>
   </div>
 </template>
 

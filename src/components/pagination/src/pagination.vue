@@ -83,7 +83,7 @@
       <!--</xj-select>-->
     <!--</div>-->
     <div class="xj-pagination__quickjump" v-if="showQuickjump">
-      <span>去</span>
+      <span>前往</span>
       <input type="text" class="xj-input__original" v-model="jumpPageNum" @keydown="handleKeydown" @keyup.enter="changePage()">
       <span>页</span>
     </div>
@@ -257,7 +257,7 @@
       cursor: pointer;
     }
     &__item {
-      + .at-pagination__item {
+      + .xj-pagination__item {
         margin-left: 4px;
       }
       &--active {
@@ -297,10 +297,16 @@
     &__quickjump {
       float: left;
       margin-left: 12px;
+      font-size: 12px;
+      line-height: 34px;
 
       input {
         display: inline-block;
         margin: 0 8px;
+        width: 40px;
+        height: 34px;
+        text-align: center;
+        line-height: 34px
       }
     }
     &__sizer {
@@ -314,6 +320,32 @@
     }
 
 
+  }
+
+  .xj-input__original {
+      display: block;
+      width: 100%;
+      padding: 6px 12px;
+      color: #27292E;
+      font-size: 12px;
+      background-color: #FFF;
+      border: 1px solid #DEDEDE;
+      border-radius: 4px;
+      -webkit-transition: border .2s;
+      transition: border .2s;
+      outline: none;
+  }
+
+  .xj-input__original::-webkit-input-placeholder {
+      color: #737685;
+  }
+
+  .xj-input__original:-ms-input-placeholder {
+      color: #737685;
+  }
+
+  .xj-input__original::placeholder {
+      color: #737685;
   }
 
 </style>
